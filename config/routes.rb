@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "/signin", to: "sessions#create"
   resources :users
   resources :items
   resources :products

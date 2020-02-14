@@ -10,9 +10,9 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-  #  render json: @user
+   render json: @user
     user_json = UserSerializer.new(@user).serialized_json
-    render json: user_json
+   #render json: user_json
   end
 
   # POST /users
@@ -45,10 +45,11 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+     render json: @user
     end
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:name, :username, :password_digest)
+      params.require(:user).permit(:id, :name, :username, :password_digest)
     end
 end

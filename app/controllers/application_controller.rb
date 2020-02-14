@@ -1,12 +1,10 @@
 class ApplicationController < ActionController::API
-    helpers do
-      def current_user
+  def current_user
 #Mocked version of being logged in
-      User.first
-    end
+    User.first
+  end
 
-    def logged_in?
-      !!current_user
-    end
+  def signed_in?
+    !!current_user
   end
 end
