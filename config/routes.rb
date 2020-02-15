@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get "/signin", to: "sessions#create"
+  post "/signin", to: "sessions#create"
+  get "/get_current_user", to: "sessions#get_current_user"
+
   resources :users
   resources :items
   resources :products
