@@ -165,4 +165,4 @@ sneaker_items = [
      mens.items.create(men_items)
 
 
-user = User.create(name:"Junia", username:"June77", password:"password")
+user = User.create(name:"Junia", email: "June@email.com", username:"June77", password:"password")
