@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
       render json: current_user
     else
       render json: {
-        error: "Not logged in"
+        signed_in: "false"
       }
     end
   end
@@ -26,6 +26,6 @@ class SessionsController < ApplicationController
   def signout
     reset_session
     render json: { status: 200, signed_out:true }
-  end 
+  end
 
 end
