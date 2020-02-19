@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def create
 
-    @user = User.find_by(email: params[:session][:email])    
+    @user = User.find_by(email: params[:session][:email])
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       render json: @user, only: [:id, :username, :email]
@@ -22,5 +22,10 @@ class SessionsController < ApplicationController
       }
     end
   end
+
+  def signout
+    reset_session
+    render json: { status: 200, signed_out:true }
+  end 
 
 end
