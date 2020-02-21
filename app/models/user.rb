@@ -3,5 +3,5 @@ class User < ApplicationRecord
   has_many :products
   has_many :items, through: :products
 
-  validates :name, :email
+  validates :name, :email, presence: true 
 end
