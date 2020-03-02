@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_22_180423) do
+ActiveRecord::Schema.define(version: 2020_03_02_194448) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_02_22_180423) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "linkUrl"
+    t.integer "quantity"
     t.index ["product_id"], name: "index_items_on_product_id"
   end
 
