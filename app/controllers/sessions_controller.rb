@@ -23,6 +23,8 @@ class SessionsController < ApplicationController
     end
   end
 
-
-
+  def signout
+    reset_session
+    render json: {status: 200, signed_out: true}
+  end
 end
